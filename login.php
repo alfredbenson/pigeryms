@@ -147,8 +147,10 @@ error:function (){}
             <input type="submit" value="Login" name="login" class="btn solid" />
             </div>
           </form>
+          
           <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="sign-up-form" onsubmit="return validatePassword();">
-            <h2 class="title">Sign up</h2>
+          <div class="signin">
+          <h2 class="title">Sign up</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
               <input type="text" name="fullName" placeholder="Full Name" required/>
@@ -194,6 +196,7 @@ error:function (){}
             
        
             <input type="submit" class="btn" name="signup" value="Signup" onclick="return validatePassword();"/>
+            </div>
           </form>
 
 

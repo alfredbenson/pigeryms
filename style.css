@@ -90,6 +90,33 @@ form.sign-in-form .signin .solid{
   margin: 0 auto;
 }
 
+
+form.sign-in-form .signin .btn{
+  display:block;
+  margin: 0 auto;
+}
+
+
+form.sign-up-form .signin{
+padding: 30px;
+border-radius: 25px;
+box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+form.sign-up-form .signin .title{
+  text-align: center;
+}
+form.sign-up-form .signin .solid{
+  display:block;
+  margin: 0 auto;
+}
+
+
+form.sign-up-form .signin .btn{
+  display:block;
+  margin: 0 auto;
+}
+
+
 .title {
   font-size: 2.2rem;
   color: #444;
