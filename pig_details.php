@@ -129,18 +129,18 @@ if (isset($_POST['placeorder'])) {
     <div class="carousel-inner" role="listbox">
         <!-- The main image (default view) -->
         <div class="item active">
-            <img src="admin/img/<?php echo $pig['img']; ?>" alt="<?php echo $pig['name']; ?>">
+            <img src="admin/img/<?php echo $pig['img']; ?>"  alt="<?php echo $pig['name']; ?>">
         </div>
         <!-- Additional images (different angles) -->
         <div class="item" >
             
-            <img src="admin/img/<?php echo $pig['back']; ?>" alt="Second angle view">
+            <img src="admin/img/<?php echo $pig['back']; ?>"  alt="Second angle view">
         </div>
         <div class="item">
-            <img src="admin/img/<?php echo $pig['side']; ?>" alt="Second angle view">
+            <img src="admin/img/<?php echo $pig['side']; ?>"  alt= "Second angle view">
         </div>
         <div class="item" >
-            <img src="admin/img/<?php echo $pig['front']; ?>" alt="Second angle view">
+            <img src="admin/img/<?php echo $pig['front']; ?>"  alt="Second angle view">
         </div>
         <!-- You can add more items (images) here... -->
     </div>
@@ -157,7 +157,7 @@ if (isset($_POST['placeorder'])) {
   </div>
 
   <div class="text-columns">
-  <h1><?php echo $pig['name']; ?> (<?php echo $pig['weight_class']; ?>)</h1>
+  <h2><?php echo $pig['name']; ?> (<?php echo $pig['weight_class']; ?>)</h2>
                         <p> &#8369;<?php echo $pig['price']; ?>/kg</p>
                         <p>Age: <?php echo $pig['age']; ?></p>
                         <p>Sex: <?php echo $pig['sex']; ?></p>

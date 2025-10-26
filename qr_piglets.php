@@ -342,7 +342,7 @@ $age = $daysDifference;
                                 <th  class="text-center">ID</th>
 								<th  class="text-center">Vaccine Name</th>
                                 <th  class="text-center">Date Vaccinated</th>
-                                <th  class="text-center">Action</th>
+                                <!-- <th  class="text-center">Action</th> -->
                                 
 							</tr>
 						</thead>
@@ -368,11 +368,11 @@ $age = $daysDifference;
 
  
     <!-- Button trigger modal -->
-    <td class="action">
+    <!-- <td class="action">
     <button type="button" class="btn deleterecord" title="Delete Record" data-bs-toggle="modal" data-bs-target="#deleteModalrecord-<?php echo htmlentities($result->id); ?>" data-id="<?php echo htmlentities($result->id); ?>" data-breeder-id="<?php echo htmlentities($result->breeder_id); ?>"> <i class='bx bx-trash'></i></button>
 
 
-                          </td>
+                          </td> -->
     <!-- Button trigger modal -->
   </tr>
   

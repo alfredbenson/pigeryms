@@ -1194,8 +1194,8 @@ document.addEventListener('DOMContentLoaded', function() {
     var pigletsInputf = document.getElementById('pigletsf');
 
     if(statusSelect === 'Lactating' && (!forrowingDateInput.value  || !pigletsInputm.value || !pigletsInputf.value)) {
+        swal("Error","For LACTATING status, please ensure that both Farrowing Date and Piglets fields are filled out.","error")
         e.preventDefault();
-        alert('For "Lactating" status, please ensure that both the Farrowing Date and Piglets fields are filled out.');
         return;  
     }
 });

@@ -143,7 +143,7 @@ if (isset($_POST['placeorder'])) {
   </div>
 
   <div class="text-columns">
-  <h1><?php echo $pig['name']; ?> (<?php echo $pig['age']; ?>)</h1>
+  <h2><?php echo $pig['name']; ?> (<?php echo $pig['age']; ?>)</h2>
                         <p> &#8369;<?php echo $pig['amount']; ?></p>
     <form action="cart.php" method="post">
                         <p>Quantity<p>

@@ -71,6 +71,7 @@ if(strlen($_SESSION['login']) == 0) {
 <!--FontAwesome Font Style -->
 <link href="assets/css/font-awesome.min.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="./admin/js/swal.js"></script>
 <link rel="shortcut icon" href="assets/images/logos.jpeg">
 <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet"> 
 <style>
@@ -162,14 +163,26 @@ if(strlen($_SESSION['login']) == 0) {
 <!--/Back to top--> 
 <script>
 function valid() {
+  // const checkpass =awat $.ajax({
+  //   url:"check_availability.php",
+  //   type:"POST",
+  //   dataType:"json",
+  //   data:{pass:$("#password").val()}
+  // });
+
+  // if (checkpass.status="wrongpass"){
+  //   swal("Error","Inputted Password doesn't match your current password","")
+  //   return false;
+  // }
   if (document.getElementById('newpassword').value !== document.getElementById('confirmpassword').value) {
-    alert("New Password and Confirm Password do not match!");
-    document.getElementById('confirmpassword').value = ''; // Clear the Confirm Password field
+    swal("Error","New Password and Confirm Password do not match!","error");
+    document.getElementById('confirmpassword').value = ''; /
     document.getElementById('confirmpassword').focus();
     return false;
   }
   return true;
 }
+
 </script>
 <!-- Scripts --> 
 <script src="assets/js/jquery.min.js"></script>
@@ -181,8 +194,26 @@ function valid() {
 <script src="assets/js/bootstrap-slider.min.js"></script> 
 
 <script src="assets/js/owl.carousel.min.js"></script>
-
+<?php if (isset($success)) { ?>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  setTimeout(function() {
+    swal("Success", "<?= addslashes($success) ?>", "success");
+  }, 100);
+  $('[data-bs-toggle="popover"]').popover();
+});
+</script>
+<?php } elseif (isset($err)) { ?>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  setTimeout(function() {
+    swal("Error", "<?= addslashes($err) ?>", "error");
+  }, 100);
+});
+</script>
+<?php } ?>
 
 </body>
 </html>
 <?php } ?>
+

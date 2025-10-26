@@ -442,14 +442,20 @@ if(isset($_POST['addcull'])){
         <div class="right-section"> 
             <p class="card-text <?php echo $piglets_status ?>"><?php echo $piglets_status ?></p>
         <?php if (!empty($qrImagePath)): ?>
-            <a href="#" class="btn btn-sm" 
+
+            <button type="button" class="btn btn-sm" title="Piglets QR" 
+            data-bs-toggle="modal"
+             data-bs-target="#qr-<?php echo $pig['id']; ?>"> 
+             <i class='bx bx-qr-scan'></i>
+            </button>
+            <!-- <a href="#" class="btn btn-sm" 
    onclick="window.open('print_qr.php?img=<?php echo urlencode($qrImagePath); ?>&name=<?php echo urlencode($pig['name']); ?>', 'QRPrint', 'width=800,height=600'); return false;">
     <i class='bx bx-qr-scan'></i>
-</a>
+</a> -->
 <?php endif; ?>
- <a href="printpigletdetails.php?id=<?php echo urlencode($pig['id']);?>" class="btn btn-sm" title="Print Piglets Details" target="_blank">
+ <!-- <a href="printpigletdetails.php?id=<?php echo urlencode($pig['id']);?>" class="btn btn-sm" title="Print Piglets Details" target="_blank">
  <i class='bx bx-printer'></i>
- </a>
+ </a> -->
         
         <button type="button" class="btn btn-sm deleteModalBtn" title="Delete Pig" data-bs-toggle="modal" data-bs-target="#deleteModal-<?php echo $pig['id']; ?>" data-pigid="<?php echo $pig['id']; ?>" ><i class='bx bx-trash'></i></button>
         
@@ -503,6 +509,34 @@ if(isset($_POST['addcull'])){
     <!-- <button type="button" class="btn btn-primary btn-sm " title="Update Pig" data-bs-toggle="modal" data-bs-target="#confirmModal" data-pigid="<?php echo $pig['id']; ?>">Update</button>
     <button type="button" class="btn btn-danger btn-sm <?= ($pig['gender'] =="Female" && $stats =="Finisher" ) ? '':'d-none'; ?>" title="Culling Pig" data-bs-toggle="modal" data-bs-target="#addModal" data-pigid="<?php echo $pig['id']; ?>">Move to Culling</button>
     <button type="button" class="btn btn-success btn-sm <?= ($pig['gender'] =="Female" && $stats =="Finisher" ) ? '':'d-none'; ?>" title="Breeding Pig" data-bs-toggle="modal" data-bs-target="#breederModal" data-pigid="<?php echo $pig['id']; ?>">Move To Breeding</button> -->
+   
+     <!-- qr  pig Modal -->
+    
+     <div class="modal fade" id="qr-<?php echo $pig['id']; ?>" tabindex="-1"  aria-labelledby="cancelModalLabel-<?php echo $pig['id']; ?>" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                    <div class="text-center">
+                        <img src="<?=$qrImagePath ?>" alt="Profile Picture" width="350px" height="350px">
+                    </div>
+                        
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-primary"  onclick="window.open('print_qr.php?img=<?php echo urlencode($qrImagePath); ?>&name=<?php echo urlencode($pig['name']); ?>', 'QRPrint', 'width=800,height=600'); return false;">Print</button>
+        
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <!-- qr pig Modal -->
+   
     <!-- deletepig  Modal -->
     
     <div class="modal fade" id="deleteModal-<?php echo $pig['id']; ?>" tabindex="-1"  aria-labelledby="cancelModalLabel-<?php echo $pig['id']; ?>" aria-hidden="true">

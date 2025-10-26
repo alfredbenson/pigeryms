@@ -537,16 +537,24 @@ margin-top: -30px;
 }
 .carousel {
   overflow: hidden;
-  width: 300px; /* You can set the width you want for your carousel */
+  width: 300px;
+  height: 377px;
+   /* You can set the width you want for your carousel */
 }
 
 .carousel-inner {
   display: flex;
+height: 377px;
   transition: all 0.5s;
+}.carousel-inner .item img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
 }
 
 .carousel-item {
-  min-width: 300px; /* The same width as the carousel */
+  min-width: 300px; 
+  min-height: 377px;/* The same width as the carousel */
   text-align: center;
 }
 
@@ -864,7 +872,6 @@ li.dot .red-dot {
   padding: 4px 15px 7px;
 }
 .user_login > ul > li a {
-	color:#fff;
 	font-size:12px;
 	font-weight:900;
 	text-transform:uppercase;
@@ -873,8 +880,9 @@ li.dot .red-dot {
 	margin:0 2px 0;
 }
 .user_login ul.dropdown-menu {
-  background:none repeat scroll 0 0;
+  background:#ffffff repeat scroll 0 0;
   border-radius: 0;
+  color:#000000;
   padding: 15px 0;
   top: 107%;
   
@@ -1555,7 +1563,7 @@ section .details {
   height: auto;
 }
 .text-columns{  
-   
+   margin-left: 55px;
   padding: 5px;
 }
 .text-columns p{
@@ -1914,6 +1922,8 @@ input.newsletter-input {
 	7. Listing-Page
 =============================*/
 .listing-page {
+  min-height: 100vh;
+  
   color: #979393;
   background-color:#eff3f0;
   max-width: 90%; /* Adjust the value as per your preference */
@@ -2496,12 +2506,11 @@ transition: opacity 0.3s, transform 0.3s;
  margin: 50px 10px 100px 10px;
 }
 .profile_nav {
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   border-right: 1px solid #c5c5c5;
   padding: 20px;
-  
   text-align: right;
 }
 .profile_nav ul {
@@ -2675,11 +2684,14 @@ font-size: 10px;
     justify-content: center;
     align-items: start;
     gap: 10px;
-   
     grid-auto-rows: min-content;
     margin-bottom: 20px;
-    overflow: visible; /* Remove the overflow: hidden property */
+    overflow: visible;
+    height: 120px; 
   }
+ 
+  .pd{
+    height:95vh; }
 .image-columns img {
   width: 40%;
   height: auto;
@@ -2708,6 +2720,7 @@ font-size: 3vh;
 
 
 .text-columns{
+  margin-left: 0px;
   text-align: center;
     padding:30px;
     

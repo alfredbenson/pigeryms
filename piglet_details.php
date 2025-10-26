@@ -173,7 +173,7 @@
     </div>
 
     <div class="text-columns">
-    <h1><?php echo $pig['name']; ?> </h1>
+    <h2><?php echo $pig['name']; ?> </h2>
                           <p>Age: <em> <?php echo $age; ?> Days</em></p>
                           <p>Weaned Date:<em> <?php echo $formattedDate ; ?></em></p>
       <form action="cart.php" method="post">

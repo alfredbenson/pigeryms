@@ -378,7 +378,6 @@ $stmtupdatetpigletdetails = $dbh->prepare("UPDATE piglets SET posted = 1 WHERE i
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link rel="stylesheet" type="text/css" href="style.css">
 	<title>Inventory</title>
 	<!-- CSS -->
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -426,7 +425,7 @@ $availableGroups = $queryGroups->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <div class="left">
     <h1>Pigs List</h1>
-    <div class="filter-group">
+    <div class="filter-group d-none">
         <label for="groupFilter">Filter by Group:</label>
         <select id="groupFilter">
             <option value="all">All Pigs</option>
@@ -445,15 +444,15 @@ $availableGroups = $queryGroups->fetchAll(PDO::FETCH_ASSOC);
                 <table id="myTable">
 						<thead>
 							<tr>  
-                                <th>ID</th>
-								<th>Name</th>
-                                <th>Sex</th>
-								<th>Age</th>
-                                <th>Weight Class</th>
-                                <th>Price</th>
-                                <th>Group</th>
-                                <th>Creation Date</th>  
-                                <th>Action</th>
+                                <th class="text-center">ID</th>
+								<th class="text-center">Name</th>
+                                <th class="text-center">Sex</th>
+								<th class="text-center">Age</th>
+                                <th class="text-center">Weight Class</th>
+                                <th class="text-center">Price</th>
+                                <th class="text-center">Group</th>
+                                <th class="text-center">Creation Date</th>  
+                                <th class="text-center">Action</th>
                                 
 							</tr>
 						</thead>
@@ -476,19 +475,19 @@ $availableGroups = $queryGroups->fetchAll(PDO::FETCH_ASSOC);
                           ?>
                               
                               <tr>
-	<td>
+	<td class="text-center">
 	<p><?php echo htmlentities($result->id); ?></p>
 		</td>
 
-	<td><?php echo htmlentities($result->name); ?></td>
-	<td><?php echo htmlentities($result->sex); ?></td>
-    <td><?php echo htmlentities($result->age); ?></td>
-    <td><?php echo htmlentities($result->weight_class);?></td>
-    <td><span>&#8369;</span><?php echo htmlentities($result->price); ?>/kg</td>
-    <td><?php echo htmlentities($result->sowname); ?></td>
-    <td><?php echo htmlentities($formatteddate); ?></td>
+	<td class="text-center"><?php echo htmlentities($result->name); ?></td>
+	<td class="text-center"><?php echo htmlentities($result->sex); ?></td>
+    <td class="text-center"><?php echo htmlentities($result->age); ?></td>
+    <td class="text-center"><?php echo htmlentities($result->weight_class);?></td>
+    <td class="text-center"><span>&#8369;</span><?php echo htmlentities($result->price); ?>/kg</td>
+    <td class="text-center"><?php echo htmlentities($result->sowname); ?></td>
+    <td class="text-center"><?php echo htmlentities($formatteddate); ?></td>
     <!-- Button trigger modal -->
-    <td class="action">
+    <td class="action text-center">
       <button type="button" class="btn delete" title="Delete Pig"  data-bs-toggle="modal" data-bs-target="#deleteModal-<?php echo htmlentities($result->id); ?>"><i class='bx bx-trash'></i></button>
     <button type="button" class="btn btn-sm updateModalBtn" title="Update Pig" data-bs-toggle="modal" data-bs-target="#updateModal" data-pigid="<?php echo $result->id; ?>"><i class='bx bx-edit'></i></button>
                           </td>
@@ -678,7 +677,7 @@ $availableGroups = $queryGroups->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <div class="left">
     <h1>Piglets List</h1>
-    <div class="filter-group">
+    <div class="filter-group d-none">
         <label for="groupFilters">Filter by Group:</label>
         <select id="groupFilters">
             <option value="all">All Pigs</option>
@@ -697,15 +696,15 @@ $availableGroups = $queryGroups->fetchAll(PDO::FETCH_ASSOC);
                 <table id="myTable">
 						<thead>
 							<tr>  
-                                <th>ID</th>
-                                <th>Image</th>
-								                <th>Piglet Name</th>
-                                <th>Sex</th>
-							                	<th>Age</th>
-                                <th>Weight</th>
-                                <th>Price</th>
-                                <th>Creation Date</th>  
-                                <th>Action</th>
+                                <th class="text-center">ID</th>
+                                <th class="text-center">Image</th>
+								                <th class="text-center">Piglet Name</th>
+                                <th class="text-center">Sex</th>
+							                	<th class="text-center">Age</th>
+                                <th class="text-center">Weight</th>
+                                <th class="text-center">Price</th>
+                                <th class="text-center">Creation Date</th>  
+                                <th class="text-center">Action</th>
                                 
 							</tr>
 						</thead>
@@ -739,20 +738,20 @@ $age = $daysDifference;
                           ?>
                               
                               <tr>
-	<td>
+	<td class="text-center">
 	<p><?php echo htmlentities($resultpigletslist->id); ?></p>
 		</td>
-	<td>
+	<td class="text-center">
 	<img src="img/img_piglets_for_sale/<?php echo htmlentities($resultpigletslist->img); ?>" alt="_blank" title="<?php echo htmlentities($resultpigletslist->img); ?>">
 		</td>
-	<td><?php echo htmlentities($resultpigletslist->groupname); ?></td>
-	<td><?php echo htmlentities($resultpigletslist->gender); ?></td>  
-    <td><?php echo htmlentities($age); ?></td>
-    <td><?php echo htmlentities($resultpigletslist->piglet_weight);?> kg</td>
-    <td><span>&#8369;</span><?php echo htmlentities($resultpigletslist->price); ?></td>
-    <td><?php echo htmlentities($farrrowedddate); ?></td>
+	<td class="text-center"><?php echo htmlentities($resultpigletslist->groupname); ?></td>
+	<td class="text-center"><?php echo htmlentities($resultpigletslist->gender); ?></td>  
+    <td class="text-center"><?php echo htmlentities($age); ?></td>
+    <td class="text-center"><?php echo htmlentities($resultpigletslist->piglet_weight);?> kg</td>
+    <td class="text-center"><span>&#8369;</span><?php echo htmlentities($resultpigletslist->price); ?></td>
+    <td class="text-center"><?php echo htmlentities($farrrowedddate); ?></td>
     <!-- Button trigger modal -->
-    <td class="action">
+    <td class="action text-center">
       <button type="button" class="btn delete" title="Delete Pig"  data-bs-toggle="modal" data-bs-target="#deletepigletModal-<?php echo htmlentities($resultpigletslist->id); ?>"><i class='bx bx-trash'></i></button>
    
       <button type="button" class="btn btn-sm updateModalBtnPiglets" title="Update Piglets" data-bs-toggle="modal" data-bs-target="#updateModalpiglets" data-forpigletsid="<?php echo $resultpigletslist->id; ?>"><i class='bx bx-edit'></i></button>
@@ -965,7 +964,7 @@ $age = $daysDifference;
                                 <th>Price</th>
                                 <th>Purchased Date</th>  
                                 <th>Consumed Date</th>  
-                                <th>Action</th>
+                                <th  >Action</th>
                                 
 							</tr>
 						</thead>

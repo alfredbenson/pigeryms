@@ -126,6 +126,7 @@ error:function (){}
       <div class="forms-container">
         <div class="signin-signup">
           <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>"  method="post" class="sign-in-form">
+            <div class="signin">
             <h2 class="title">Sign in</h2>
             <div class="input-field">
               <i class="fas fa-user"></i>
@@ -142,8 +143,9 @@ error:function (){}
             <?php if (isset($loginError)): ?>
     <p class="error"><?php echo $loginError; ?></p>
   <?php endif; ?>
-
+<br>
             <input type="submit" value="Login" name="login" class="btn solid" />
+            </div>
           </form>
           <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class="sign-up-form" onsubmit="return validatePassword();">
             <h2 class="title">Sign up</h2>
@@ -298,6 +300,20 @@ function validatePassword() {
             return false;
         }
     }
+
+
+    $("#loaderIcon").show();
+jQuery.ajax({
+url: "check_availability.php",
+data:'emailid='+$("#emailid").val(),
+type: "POST",
+success:function(data){
+$("#user-availability-status").html(data);
+$("#loaderIcon").hide();
+},
+error:function (){}
+});
+
 
     return true; 
 }

@@ -1015,24 +1015,26 @@ addpigletsprice.addEventListener('click', ()=>{
             let price = document.getElementById("priceInput");
 
  if(!img.files.length){
-    alert("Please add an image.");
+    swal("Error","Please add an image.","error");
+  
     return;
  }
  if(!weight.value){
-    alert("Please input a weight.");
+    swal("Error","Please input a weight.","error");
     return;
  }
  if (!pigletId) {
-    alert("Please select a name.");
+    swal("Error","Please select a piglet.","error");
+  
     return;
 }
  if(!pigletgender.value){
-    alert("Please input a gender.");
+    swal("Error","Please input a gender.","error");
     return;
  }
 
  if (!price.value){
-    alert("Please input a price.");
+    swal("Error","Please input a price.","error");
     return;
  }
 

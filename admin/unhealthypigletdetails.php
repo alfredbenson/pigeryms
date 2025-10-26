@@ -502,7 +502,7 @@ echo '</script>';
 		</td>
         <td class="text-center"><?php echo htmlentities($result->vaccined_by); ?></td>
 	<td class="text-center"><?php echo htmlentities($result->vaccine_name); ?></td>
-	<td><?php echo htmlentities($formatteddates); ?></td>
+	<td class="text-center"><?php echo htmlentities($formatteddates); ?></td>
 
  
     <!-- Button trigger modal -->

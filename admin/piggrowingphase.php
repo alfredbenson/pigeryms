@@ -169,7 +169,7 @@ if ($query) {
 </div>
 </div>
 						<button type="button" title="Click to Add" data-bs-toggle="modal" data-bs-target="#addModal"
-    class="openModalBtn " ><i class='bx bx-plus-circle' style=""></i> Add New</button>
+    class="openModalBtn d-none" ><i class='bx bx-plus-circle' style=""></i> Add New</button>
 					</div>
 
 					<ul class="breeders" id="carList">

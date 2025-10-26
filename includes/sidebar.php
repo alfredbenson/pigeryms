@@ -1,6 +1,6 @@
 
 
-<div class="profile_nav" >
+<div class="profile_nav"style="display:hidden;" >
           <ul>
             <li><a href="profile.php">Profile Settings</a></li>
               <li><a href="update-password.php">Update Password</a></li>

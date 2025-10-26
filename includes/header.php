@@ -28,16 +28,13 @@ $num_items_in_cart = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
 ?>
 <header>
   <div class="default-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-2 col-md-2">
-          <div class="logo"><a href="index.php"><img src="img/logos.jpeg" alt="image" width="100" height="100"><span style="color: #00bf63;"></div>
-          
-
+  <div class="container m-3 p-3">
+      <div class="row w-100 m-0 p-0 g-0"> 
+        <div class="col-sm-2 col-md-2  w-100">
+          <div class="logo"><a href="index.php"><img src="img/logoooo.jpg" alt="image" width="50" height="50"><span style="color: #00bf63;font:italic;font-weight:bold;"><em>Ronald's Baboyan</em></span></div>
         </div>
-        <div class="col-sm-9 col-md-10">
-          <div class="header_info">
-          
+        <div class="col-sm-9 col-md-10 ">
+          <div class="header_info ">
             <div class="header_widgets">
               <div class="circle_icon"> <i class="fa fa-envelope" aria-hidden="true"></i> </div>
               <p class="uppercase_text">For Support Email us : </p>

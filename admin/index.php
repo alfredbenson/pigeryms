@@ -16,9 +16,7 @@ if($query->rowCount() > 0)
 $_SESSION['alogin']=$_POST['username'];
 echo "<script type='text/javascript'> document.location = 'dashboard.php'; </script>";
 } else{
-
-  echo "<script>alert('Invalid Details');</script>";
-
+	$err = "Invalid Details";
 }
 
 }
@@ -39,7 +37,7 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
 	<link rel="icon" type="image/x-icon" href="img/logos.jpeg">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
-	
+	<script src="js/swal.js"></script>
 </head>
 
 
@@ -52,8 +50,8 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
 								
 				<div class="loginan">
 					<form method="post">
+				<div class="loginform">
 						<img src="img/logos.jpeg" alt="pig">
-
 						<h1 class="okie">Welcome</h1>
 
 						<div class="input-div user">
@@ -61,8 +59,7 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
 								<i class="fas fa-user"></i>
 							</div>
 							<div class="div">
-								<h5> Username </h5>
-								<input type="username"  name="username" class="input" required>
+								<input type="username" name="username" placeholder="Username" class="input" required>
 							</div>
 						</div>
 
@@ -71,12 +68,12 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
 								<i class="fas fa-lock"></i>
 							</div>
 							<div class="div">
-								<h5> Password </h5>
-								<input type="password" name="password" class="input" required>
+								<input type="password" name="password"  placeholder= "Password" class="input" required>
 							</div>
 						</div>
 
 						<button class="btn-login" name="login" type="submit">LOG IN</button>
+					</div>
 
 					</form>
 				</div>
@@ -94,6 +91,26 @@ echo "<script type='text/javascript'> document.location = 'dashboard.php'; </scr
    		});
 	});
 	</script>
+
+
+<?php if (isset($success)) { ?>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  setTimeout(function() {
+    swal("Success", "<?= addslashes($success) ?>", "success");
+  }, 100);
+  $('[data-bs-toggle="popover"]').popover();
+});
+</script>
+<?php } elseif (isset($err)) { ?>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  setTimeout(function() {
+    swal("Error", "<?= addslashes($err) ?>", "error");
+  }, 100);
+});
+</script>
+<?php } ?>
 
 </body>
 

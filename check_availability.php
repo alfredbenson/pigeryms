@@ -1,5 +1,7 @@
 <?php 
 require_once("includes/config.php");
+$email = $_SESSION['login'];
+
 // code user email availablity
 if(!empty($_POST["emailid"])) {
 	$email= $_POST["emailid"];
@@ -24,6 +26,29 @@ echo "<span style='color:red'> Email already exists .</span>";
  echo "<script>$('#submit').prop('disabled',false);</script>";
 }
 }
+}
+
+if(!empty($_POST["pass"])){
+$password = $_POST["pass"];
+
+$sql ="SELECT EmailId,Password FROM tblusers WHERE EmailId=:email";
+$query= $dbh -> prepare($sql);
+$query-> bindParam(':email', $email, PDO::PARAM_STR);
+$query-> execute();
+$results = $query -> fetch(PDO::FETCH_OBJ);
+$cnt=1;
+
+if($results && password_verify($password == $result->Password))
+{
+echo json_encode([
+'status'=>'rightpass',
+]);
+} else{
+	echo json_encode([
+		'status'=>'wrongpass',
+		]);
+}
+
 }
 
 
